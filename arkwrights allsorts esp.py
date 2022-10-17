@@ -39,10 +39,17 @@ if menu == "1":
                 if productdetails[item]["product name"] == productName:
                     product = productdetails[item]
                     found = True
+                    product['product quantity'] = product['product quantity'] - 1
+                    write(productdetails)
+                    
                     break
             if found is False:
                 print("Item not found")
                 continue
+            elif product['product quantity'] == 0:
+                print("There is none of this product left ")
+                exit()
+                
                   
         print(product["product name"])
 
@@ -108,15 +115,9 @@ elif menu == "2":
                 return False
             else:
                 quantity = quantity - 1
-                return True
-        quantity_check(quantity)
-
-        def quantity_check2(quantity):
-            if quantity == 0:
-                print("There is none of this product left")
-                exit()
-        quantity_check(quantity)
-                
+            return quantity
+        quantity = quantity_check(quantity)
+        
 
         def productPriceNoV(productPriceNoVat):
             try:
@@ -148,7 +149,7 @@ elif menu == "2":
 
         def append(productdetails):
             with open(f'{cwd}/abc.json', 'a') as file:
-                 dump(productdetails, file, indent=3)
+                 dump(productdetails, file, indent=1)
 elif menu == '3':
     print("Bye")
     quit()
