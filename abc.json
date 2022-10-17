@@ -1,9 +1,50 @@
 {
-   "productID": 0,
-   "product name": "chainsaw",
-   "department": "Hand tools",
-   "product location in warehouse": "",
-   "quantity": 4,
-   "price without vat": 3.0,
-   "price with vat": 5.0
+ "1111111": {
+  "product name": "Sui",
+  "department": "Hand tools",
+  "product location in warehouse": "A3",
+  "product quantity": 2,
+  "product price with no vat": 2.0,
+  "product price with vat": 2.0
+ },
+ "1112111": {
+  "product name": "Hacksaw",
+  "department": "Power tools",
+  "product location in warehouse": "A3",
+  "product quantity": 2,
+  "product price with no vat": 5.0,
+  "product price with vat": 5.0
+ },
+ "1111112": {
+  "product name": "Jacob Holmes",
+  "department": "Hand tool",
+  "product location in warehouse": "A7",
+  "product quantity": 2,
+  "product price with no vat": 2.0,
+  "product price with vat": 2.0
+ },
+ "1111122": {
+  "product name": "Sui",
+  "department": "Hand tools",
+  "product location in warehouse": "A8",
+  "product quantity": 2,
+  "product price with no vat": 2.0,
+  "product price with vat": 2.0
+ },
+ "1234567": {
+  "product name": "hehe",
+  "department": "Hand tools",
+  "product location in warehouse": "A6",
+  "product quantity": 2,
+  "product price with no vat": 2.0,
+  "product price with vat": 2.0
+ },
+ "1111111": {
+  "product name": "sui",
+  "department": "Hand tools",
+  "product location in warehouse": "A3",
+  "product quantity": 3,
+  "product price with no vat": 3.0,
+  "product price with vat": 3.0
+ }
 }
