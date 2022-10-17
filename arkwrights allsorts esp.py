@@ -6,10 +6,6 @@ cwd = getcwd() #current directory
 
 global productdetails
 
-#for item in productdetails:
-    #if item["product name"] == name:
-        #product = item
-        #break
 
 with open(f"{cwd}/abc.json") as file:
     productdetails = load(file)
@@ -23,7 +19,7 @@ def write(productdetails):
          dump(productdetails, file, indent = 1)
 
 
-menu = input("Please enter a command:\n1) Search for a product\n2) Create a product\n3) Exit")
+menu = input("Please enter a command: \n1) Search for a product \n2) Create a product \n3) Exit")
 
 if menu == "1":
     productsearch = True
@@ -39,19 +35,15 @@ if menu == "1":
         elif menu2 == '2':
             productName = input("What is the name of the product? ")
             found = False
-            for item in productdetails:
-                if item["product name"] == name:
-                    product = item
+            for item in productdetails.keys():
+                if productdetails[item]["product name"] == productName:
+                    product = productdetails[item]
                     found = True
                     break
             if found is False:
                 print("Item not found")
                 continue
                   
-
-        elif menu2 == '3':
-            quit()
-
         print(product["product name"])
 
         print(product["department"])
@@ -68,7 +60,6 @@ if menu == "1":
 
         print("\n")
 
-        
     
 elif menu == "2":
     addproduct = True
@@ -107,6 +98,7 @@ elif menu == "2":
             if productLocationInWarehouse[0].isalpha() and productLocationInWarehouse[1].isdigit():
                 return True
             else:
+                print("Invalid Warehouse Location")
                 return False
         warehouseLocationCheck(productLocationInWarehouse)
 
@@ -114,7 +106,17 @@ elif menu == "2":
             if not str(quantity).isdigit():
                 print("That is not a valid quantity")
                 return False
+            else:
+                quantity = quantity - 1
+                return True
         quantity_check(quantity)
+
+        def quantity_check2(quantity):
+            if quantity == 0:
+                print("There is none of this product left")
+                exit()
+        quantity_check(quantity)
+                
 
         def productPriceNoV(productPriceNoVat):
             try:
@@ -147,7 +149,10 @@ elif menu == "2":
         def append(productdetails):
             with open(f'{cwd}/abc.json', 'a') as file:
                  dump(productdetails, file, indent=3)
-
+elif menu == '3':
+    print("Bye")
+    quit()
+    
         
         
             
@@ -159,6 +164,7 @@ elif menu == "2":
                  
         
         
+
 
       
                     
